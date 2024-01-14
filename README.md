@@ -4,7 +4,7 @@ NER - Named Entity Recognition
 
 LSTM + CRF
 
-![](https://imgconvert.csdnimg.cn/aHR0cHM6Ly9tbWJpei5xcGljLmNuL21tYml6X3BuZy9DT296WW14aWNKRlN6bGNndEZGcEhBRnRpYnQyOUczbXRUQXU4Y2dwckZWSmZDNG1QdmF0OWljUlgxamFLTnRTcTBNaWFIZ2swZHk3bFZIRlUyRFk3QmNYcFEvNjQw?x-oss-process=image/format,png#pic_center=100)
+![](https://manu44.magtech.com.cn/Jwk_infotech_wk3/article/2019/2096-3467/2096-3467-3-2-90/img_5.png#pic_center=100)
 
 - [ ] CRF
 - [ ] BERT + CRF
