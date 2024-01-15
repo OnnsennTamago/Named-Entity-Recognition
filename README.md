@@ -2,7 +2,7 @@
 NER - Named Entity Recognition
 - Rule-based: The code will be tedious when we want to deal with complex text.
 
-![](./Named Entity Recognition/data_preprocess/README.md)
+![](./Named_Entity_Recognition/data_preprocess/README.md)
 
 
 
