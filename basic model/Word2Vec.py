@@ -15,18 +15,3 @@ class Embedding(nn.Module):
 
     def forward(self, x: torch.Tensor) -> torch.Tensor:
         return self.embedding(x)
-
-train_set = NERDataset(
-        token_seq=train_token_seq,
-        label_seq=train_label_seq,
-        token2idx=token2idx,
-        label2idx=label2idx,
-        preprocess=config["dataloader"]["preprocess"],
-    )
-
-    train_token_seq, train_label_seq = prepare_conll_data_format(
-        path=config["data"]["train_data"]["path"],
-        sep=config["data"]["train_data"]["sep"],
-        lower=config["data"]["train_data"]["lower"],
-        verbose=config["data"]["train_data"]["verbose"],
-    )
