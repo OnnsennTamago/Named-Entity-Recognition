@@ -40,6 +40,7 @@ def get_data_seq(data):
         data_token_seq.append(a)
         data_label_seq.append(b)
     return data_token_seq, data_label_seq
+
 def get_token2id(token2cnt, min_count = 1,add_pad = True, add_unk = True):
     '''
     Get mapping from tokens to indices to use with Embedding layer.

@@ -12,12 +12,13 @@ def to_numpy(tensor: torch.Tensor) -> np.ndarray:
     """
     return (tensor.detach().cpu().numpy() if tensor.requires_grad else tensor.cpu().numpy())
 
-
 def calculate_metrics(metrics, loss, y_true, y_pred, idx2label):
     '''
     y_true: ndarray
     y_pred: ndarray
     '''
+    import warnings
+    warnings.filterwarnings('ignore')  # "error", "ignore", "always", "default", "module" or "once"
 
     metrics["loss"].append(loss)
 

@@ -67,7 +67,7 @@ print("-"*30)
 
 embedding_layer = Embedding(num_embeddings=len(token_to_id), embedding_dim=128)
 
-rnn_layer = RNN(rnn_unit=torch.nn.LSTM, input_size=128, hidden_size=256, 
+rnn_layer = dynamicRNN(rnn_unit=torch.nn.LSTM, input_size=128, hidden_size=256, 
                 num_layers=1, dropout=0, bidirectional=True)
 
 linear_head = LinearHead(linear_head=torch.nn.Linear(in_features=(2*256), 
@@ -100,6 +100,8 @@ for epoch in range(n_epoch):
 
         # forward pass
         logits = model(tokens, lengths)
+        print(logits.shape)
+        print(labels.shape)
         loss_without_reduction = criterion(logits.transpose(-1, -2), labels)
         loss = torch.sum(loss_without_reduction * mask) / torch.sum(mask)
 
