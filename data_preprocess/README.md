@@ -1,7 +1,7 @@
-# download data
+# Download data
 Data sources: https://github.com/orestxherija/conll-balanced
 
-# preprocess
+# Preprocess
 Use preprocess.ipynb to generate all-data.csv.
 
 # build model
