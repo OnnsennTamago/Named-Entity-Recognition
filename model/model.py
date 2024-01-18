@@ -18,12 +18,10 @@ class dynamicRNN(torch.nn.Module):
         
         self.rnn = rnn_unit(input_size=input_size, hidden_size=hidden_size,
             num_layers=num_layers, dropout=dropout, bidirectional=bidirectional, batch_first=True)
-        self.h = None
-        self.c = None
         
     def forward(self, x, x_length):
         packed_x = pack_padded_sequence(x, x_length.cpu(), batch_first=True, enforce_sorted=True)
-        packed_rnn_out, self.h, self.c = self.rnn(packed_x, self.h, self.c)
+        packed_rnn_out, (self.h, self.c) = self.rnn(packed_x)
         rnn_out, _ = pad_packed_sequence(packed_rnn_out, batch_first=True)
         return rnn_out
     
