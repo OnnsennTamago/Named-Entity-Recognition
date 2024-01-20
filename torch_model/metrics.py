@@ -12,14 +12,15 @@ def to_numpy(tensor: torch.Tensor) -> np.ndarray:
     """
     return (tensor.detach().cpu().numpy() if tensor.requires_grad else tensor.cpu().numpy())
 
-def calculate_metrics(metrics, loss, y_true, y_pred, idx2label):
+def calculate_metrics(metrics, loss, use_crf, loss_crf, y_true, y_pred, idx2label):
     '''
     y_true: ndarray
     y_pred: ndarray
     '''
     import warnings
     warnings.filterwarnings('ignore')  # "error", "ignore", "always", "default", "module" or "once"
-
+    if use_crf:
+        metrics["loss_crf"].append(loss_crf)
     metrics["loss"].append(loss)
 
     f1_per_class = f1_score(y_true=y_true, y_pred=y_pred, labels=range(len(idx2label)), average=None)

@@ -9,10 +9,6 @@ Data sources: https://github.com/orestxherija/conll-balanced
 Use preprocess.ipynb to get train.csv and test.csv.
 
 # 3 Build model
+BiLSTM
+BiLSTM + CRF
 
-
-BiLSTM 
-  
-- [ ] CRF
-- [ ] BERT + CRF
-- [ ] Dilated-CNN + CRF 

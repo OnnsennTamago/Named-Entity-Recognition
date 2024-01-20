@@ -11,7 +11,7 @@ def get_label_unique(data):
                 unique_label_list.append(tag)
     return unique_label_list
 
-def get_tokens_labels(data, id):
+def get_tokens_labels(data, id, lower=False):
     
     def get_sent_labels_list(data, id):
         labels_list = []
@@ -26,17 +26,19 @@ def get_tokens_labels(data, id):
         tokens_list = []
         tokens = data.loc[id, "raw_sentence"].split()
         for token in tokens:
-            tokens_list.append(token.lower())
+            if lower is True:
+                token = token.lower()
+            tokens_list.append(token)
         return tokens_list
 
     tokens_list = get_sent_tokens_list(data, id)
     labels_list = get_sent_labels_list(data, id)
     return tokens_list, labels_list
 
-def get_data_seq(data):
+def get_data_seq(data, lower):
     data_token_seq, data_label_seq = [], []
     for i in range(len(data)):
-        a, b = get_tokens_labels(data, i)
+        a, b = get_tokens_labels(data, i, lower=lower)
         data_token_seq.append(a)
         data_label_seq.append(b)
     return data_token_seq, data_label_seq
