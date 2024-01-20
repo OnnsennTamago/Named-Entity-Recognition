@@ -6,7 +6,7 @@ NER - Named Entity Recognition
 Data sources: https://github.com/orestxherija/conll-balanced
 
 # 2 Preprocess
-Use preprocess.ipynb to get train.csv and test.csv.
+Use preprocess.ipynb to get data we want.
 
 # 3 Build model
 BiLSTM
