@@ -10,6 +10,7 @@ Use preprocess.ipynb to get train.csv and test.csv.
 
 # 3 Build model
 BiLSTM
+
 BiLSTM + CRF
 
 # 4 Problem
