@@ -14,12 +14,9 @@ BiLSTM
 BiLSTM + CRF
 
 # 4 Problem
-1. The corpus extracted from train_dataset is not big enough. Therefore, some words can not be recognised and classified.
-
-2. CRF learning effect is not better as BiLSTM. The reason may be the learning rate of CRF is not big enough. The model uses the same lr and the loss combined with BiLSTM loss and CRF loss to update parameters.
+1. CRF learning effect is not better as BiLSTM. The reason may be the learning rate of CRF is not big enough. The model uses the same lr and the loss combined with BiLSTM loss and CRF loss to update parameters.
 
     This problem is also mentioned at https://kexue.fm/archives/7196.
 
 # 5 Solution
-1. Change dataset.
-2. Weighted loss in multi-task learning.
+1. Weighted loss in multi-task learning.
